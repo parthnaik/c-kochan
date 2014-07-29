@@ -1,0 +1,23 @@
+/* The equivalence of datePtr->month is (*datePtr).month. Brackets are required because . has higher precedence than *. datePtr->month is a shortcut. */
+
+#include <stdio.h>
+
+int main(void) {
+	struct date {
+		int month;
+		int day;
+		int year;
+	};
+
+	struct date today, *datePtr;
+
+	datePtr = &today;
+
+	(*datePtr).month = 9; // this can be used instead of below
+	datePtr->day = 25;
+	datePtr->year = 2004;
+
+	printf("Today's date is %i/%i/%.2i\n", datePtr->month, datePtr->day, datePtr->year % 100);
+
+	return 0;
+}
