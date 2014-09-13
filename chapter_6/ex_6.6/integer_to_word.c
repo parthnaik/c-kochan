@@ -8,6 +8,10 @@ int main(void) {
 	scanf("%i", &uinput);
 
 	// Reverse the number
+	if (uinput == 0)
+	{NSLog(@"zero");
+	return 0;}
+	else
 	while (uinput != 0) {
 		int rem = uinput % 10;
 		uinput /= 10;
